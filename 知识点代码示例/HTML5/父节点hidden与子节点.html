@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>示例</title>
+    <style>
+        .parent {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            background-color: #eee;
+        }
+
+        .child {
+            position: absolute;
+            width: 200px;
+            height: 300px;
+            background-color: #ccc;
+            z-index: 999;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    </head>
+    <body>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+    </body>
+    </html>

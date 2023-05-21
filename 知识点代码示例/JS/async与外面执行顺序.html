@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function b(){
+                console.log('async1')
+            }
+        let c = () => {console.log('async3')}
+
+            // async 第一个任务相当于在外面是同步,然后函数内停止，为异步，但外面同步还是会执行
+        async function a(){
+            await b()
+            await console.log('async2')
+            await c()
+
+        }
+
+        console.log('外1')
+        a()
+        console.log('外2')
+
+
+
+
+    </script>
+</body>
+</html>

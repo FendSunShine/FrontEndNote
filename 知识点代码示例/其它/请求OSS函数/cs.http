@@ -1,0 +1,8 @@
+GET /vue-marker/5f3e41a8b7d9c60b68cdd1ec.jpg?x-oss-process=image/resize,w_50,h50
+Accept: image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Host: vue-maker.oss-cn-hangzhou.aliyuncs.com
+Proxy-Connection: keep-alive
+Referer: http://47.109.94.74/
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.68

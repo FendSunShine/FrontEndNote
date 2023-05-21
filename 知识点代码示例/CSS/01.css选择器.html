@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 兄弟选择器 */
+        /* #li2 + li + li {
+            background-color: pink;
+        } */
+        /* 可排序第一个 */
+        ul li + li {
+            background-color: skyblue;
+        }
+        /* 属性选择器 */
+        p[abc] {
+            background-color: orange;
+        }
+        /* 子代 */
+        ul li:nth-child(3) {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <ul>
+        <li>1</li>
+        <li id="li2">2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+
+    <p abc>11</p>
+    <p>22</p>
+</body>
+</html>

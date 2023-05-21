@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+/* 浮动 */
+        .left,.right {
+            width:200px
+        }
+        .left {
+            float: left;
+        }
+        .right {
+            float:right
+        }
+        .center {
+            float: left;
+            width: calc(100% - 400px);
+        }
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .clearfix::after {
+            content:'';
+            display:  block;
+            clear:both
+        }
+
+/* flex布局 */
+        /* .main {
+            display: flex;
+            width: 100%;
+        }
+        .left, .right {
+            width:20%;
+        }
+        .center {
+            flex: 1;
+        } */
+/* 定位 */
+        /* .main {
+            position: relative;
+            width: 100%;
+        }
+        .left {
+            position: absolute;
+            left:0;
+            top: 0;
+            width: 20%;
+            background-color: pink;
+        }
+        .right {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 20%;
+            background-color: pink;
+        }
+        .center {
+            margin-left: 20%;
+            margin-right: 20%;
+        } */
+    </style>
+</head>
+<body>
+    <div class="main clearfix">
+        <div class="left">left</div>
+        <div class="center">center</div>
+        <div class="right " >right</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+### v-model 双向绑定原理总结
+
+v-model绑定data里面的属性，当输入时，触发input事件，input事件就把input的value赋值给data里面的属性。
+
+而data里面的属性都是defineProperty定义的，其中有getter与setter，当data里的属性改变时触发getter，在getter里面就会操作DOM，把所有用到该data属性的节点与文字都重新赋值。

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Clear属性示例</title>
+        <style>
+            body,html {margin: 0;padding: 0;}
+            .left {
+                float: left;
+                width: 200px;
+            }
+
+            .right {
+                margin-left: 220px;
+            }
+
+            .right  {
+                clear:right;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="left">
+            <h2>Left Column</h2>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </div>
+        <div class="right">
+            <h2>Right Column</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue purus a felis hendrerit iaculis.</p>
+        </div>
+    </body>
+</html>

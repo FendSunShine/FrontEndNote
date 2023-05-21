@@ -1,0 +1,24 @@
+h('li',{key:'a'},'a'), s    		h('li',{key:'c'},'c'),	    
+h('li',{key:'b'},'b'),        		h('li',{key:'f'},'f'),	s 
+h('li',{key:'c'},'c'), x        	h('li',{key:'d'},'d'),	 
+h('li',{key:'d'},'d'),      		h('li',{key:'a'},'a'),	
+									h('li',{key:'b'},'b'),
+			idxInOld = 2
+第五种情况分析：
+			真实： 
+			h('li',{key:'c'},'c'),
+			h('li',{key:'f'},'f'),
+			h('li',{key:'a'},'a'),
+			h('li',{key:'b'},'b'),
+			h('li',{key:'d'},'d'),
+利用keymap来找老虚拟节点是否有新虚拟节点，有就排序
+			keyMap {
+				a: 0,
+				b: 1,
+				c: 2,
+				d: 3
+			}
+
+
+
+

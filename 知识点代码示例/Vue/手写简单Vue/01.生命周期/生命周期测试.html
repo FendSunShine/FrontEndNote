@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">111</div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                str: 'lx'
+            },
+            beforeCreated(){console.log('1', this.$el, this.$data)},
+            created(){console.log('2', this.$el, this.$data)},
+            beforeMount(){console.log('3', this.$el, this.$data)},
+            mounted(){console.log('4', this.$el, this.$data)},
+            beforeUpdate(){console.log('5', this.$el, this.$data)},
+            update(){console.log('6', this.$el, this.$data)},
+            beforeDestroy(){console.log('7',  this.$el, this.$data)},
+            destroyed(){console.log('8', this.$el, this.$data)},
+
+
+            // // 这个this指向改对象， 而vue的this是指向构造函数的
+            // destroyed(){console.log('8', this, this.$el, this.$data)},
+            // // z这个this指向windows
+            // destroyed: () => {console.log('8', this, this.$el, this.$data)},
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+const arr = [1, 2, 3];
+
+// forEach 方法
+    try {
+    arr.forEach((item) => {
+        if (item === 2) {
+        throw new Error('中断循环');
+        }
+        console.log(item);
+    });
+    } catch (e) {
+    console.log(e.message); // 输出 "中断循环"
+    }
+// map 方法
+    try {
+    const newArr = arr.map((item) => {
+        if (item === 2) {
+        throw new Error('中断循环');
+        }
+        console.log(item);
+        return item;
+    });
+    } catch (e) {
+    console.log(e.message); // 不会输出任何信息
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let list = [3,4,5,6]
+
+        // 0 最快的，最普通的
+        console.log('0-----------------------')
+        for(let i=0, len=list.length; i<len; i++){
+            console.log(list[i])
+        }
+        // 1
+        console.log('1-----------------------')
+        list.forEach((value, index, array) => {
+            console.log(value)
+        })
+
+        // 2 和对象一样只能拿到Key
+        console.log('2-----------------------')
+        for(let i in list){
+            console.log(i)
+        }
+        // 3 这个是能拿到值的，存在迭代器
+        console.log('3-----------------------')
+        for (let i of list){
+            console.log(i)
+        }
+        // 4 map是一种映射
+        console.log('4-----------------------')
+        list.map((value, index, array) => {
+            console.log(value)
+            }
+        )
+        // 5 reduce
+        console.log('5-----------------------')
+        // 第一个参数是返回的值，第二个是现在的
+        list.reduce((previousValue, currentValue) => {
+            console.log(previousValue, currentValue)
+            return previousValue * currentValue
+        })
+        // 6 fliter
+        console.log('6-----------------------')
+        console.log(
+            list.filter((value, index, array) => {
+            return value > 3
+        })
+        )
+        // 7 some 只要有一个就返回true
+        console.log('7-----------------------')
+        console.log(
+            list.some((value, index, array) => {
+                return value == 55
+            })
+        )
+        // 8 every 需每一个都满足条件
+        console.log('8-----------------------')
+        console.log(
+            list.every((value, index, array) => {
+                return value > 100
+            })
+        )
+        // 9 find 有就返回，没有就是undefined
+        console.log('9-----------------------')
+        console.log(
+            
+            list.find((value, index, array) => {
+                console.log(value, index, array)
+                return value == 3
+            })
+        )
+        // 10 findIndex 有就返回index，没有就是 -1
+        console.log('10-----------------------')
+        console.log(
+            list.findIndex((value, index, array) => {
+                return value == 3
+            })
+        )
+        // 11 includes 有就返回true, 没有就返回false
+        console.log('11-----------------------')
+        console.log(
+            list.includes(3)
+        )
+        // 12 indexOf 有就返回index，没有就是 -1
+        console.log('11-----------------------')
+        console.log(
+            list.indexOf(3, 0)
+        )
+        // 13 
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // for(let i=0; i< 10; i++){
+        //     var k = 10
+        // }
+
+        // if(true) {
+        //     var q = 20
+        // }
+        // console.log(k)
+        // console.log(q)
+    
+        // 作用域类，先是函数的声明，再是var声明， 再是var的赋值
+        function a(b){
+            console.log(b)
+            function b(){}
+            var b = 10
+            console.log(b)
+        }   
+        a(20)
+
+
+    </script>
+</body>
+</html>

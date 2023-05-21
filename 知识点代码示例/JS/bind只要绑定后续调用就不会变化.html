@@ -1,0 +1,14 @@
+<script>
+const a = function(){
+    this.name = "lx";
+    console.log(this)
+}.bind(window)
+
+
+const obj = {
+    name: 'lsy',
+    a
+}
+obj.a()
+a()
+</script>

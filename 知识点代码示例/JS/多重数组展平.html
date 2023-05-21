@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        list = [1,2,[1,2,3,[1,2,[4]]]]
+        function Deepflat(list){
+            let result = []
+            for(let key in list){
+                if(Array.isArray(list[key])){
+                    result = result.concat(Deepflat(list[key]))
+                } else {
+                    result.push(list[key])
+                }
+            }
+            return result
+        }
+        console.log(Deepflat(list));
+    </script>
+</body>
+</html>

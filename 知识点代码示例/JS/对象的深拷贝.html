@@ -1,0 +1,25 @@
+<script>
+    // const target = { a: { b: 1 } }
+    // const obj1 = { a: { c: 2 } }
+    // const res = Object.assign(target, obj1)
+    // console.log(res) // {a: { c: 2}}
+    // // 注意：对于源对象的引用类型属性，仅复制其地址
+    // console.log(target.a === obj1.a) // true
+    // // Object.assign是浅拷贝
+
+    // 传入的是引用类型
+    function deepCopy(source) {
+        let result = Array.isArray(source) ? [] : {}
+        for(let k of result){
+            if(source.hasOwnProperty(k)){
+                if (typeof source[k] === 'object' && source[k] !== null){
+                    result[k] = deepCopy(source)
+                } else {
+                    result[k] = source[k]
+                }
+            }
+            return result
+        }
+    }
+
+</script>

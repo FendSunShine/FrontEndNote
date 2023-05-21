@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 1 json.parse 与 json.stringify
+        // 原理就是字符串不是引用类型
+        let obj1 = {
+            a: 1,
+            b: [1,2,3],
+            c: {c1: 1, c2: 2},
+            d:undefined,
+            e:()=> console.log(123)
+        }
+        // 浅拷贝
+        // let obj2 = obj1
+        // let obj2 = Object.assign(obj1)
+
+        // 深拷贝1
+        // let obj2 = JSON.parse(JSON.stringify(obj1))
+
+        // 深拷贝2 自己写个递归
+        function deepCopy(obj){
+            let newObj = Array.isArray(obj) ? [] : {}
+            for(let key in obj){
+                // 如果是引用类型
+                if (typeof obj[key] == 'object'){
+                    newObj[key] = deepCopy(obj[key])
+                    // console.log('引用类型', obj[key])
+                } else {
+                    newObj[key] = obj[key]
+                }
+            }
+            return newObj
+        }
+        let obj2 = deepCopy(obj1)
+        console.log(obj1, 1)
+        console.log(obj2, 2)
+        // 验证
+        // obj1.c.c1 = 111
+        // obj2.c.c1 = 222
+        // console.log(obj1.c, 'obj1')
+        // console.log(obj2.c, 'obj2')
+    </script>
+</body>
+</html>

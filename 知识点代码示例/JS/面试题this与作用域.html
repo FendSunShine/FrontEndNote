@@ -1,0 +1,28 @@
+<script>
+    // 总结：函数还是谁调用就指向谁
+    // 箭头的this则是寻找上一个this
+    var num = 10
+    var obj = {
+        num: 66,
+        a: function(){
+            var num = 88;
+            console.log('a:',this);
+            console.log('a:', this.num);
+
+        },
+        b:() => {
+            // var num = 99;
+            console.log('b:',this);
+            // console.log('b1:', num);
+            console.log('b2:', this.num);
+            }
+        
+    }
+    
+    // console.dir(window.num);
+
+    obj.a()
+    // call 没有值就是window
+    obj.a.call()
+    obj.a.call({num:123})
+</script>

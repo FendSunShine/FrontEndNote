@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // new 发生了什么？ 
+        // 1. 创建空对象
+        // 2. 将空的原型指向构造函数的原型
+        // 3. 给新对象添加构造函数所有的属性与方法
+        // 4. 对构造函数有返回值的做出判断
+
+
+        function fun(name, age){
+            this.name = name
+            this.age = age
+            // return [1,2,3]
+        }
+        fun.prototype.sing = function(){
+            console.log('我在唱歌')
+        }
+        // // 1. 创建空对象
+        // console.log(new fun())
+        // // 2. 将空的原型指向构造函数的原型
+        // console.log(fun.prototype ==  new fun().__proto__)
+
+
+        // 自己写一个new
+        function mynew(fun, ...args){
+            // 创建新对象
+            let obj = {}
+            // 空对象的原型指向构造函数的原型
+            Object.setPrototypeOf(obj, fun.prototype)
+            // 给新对象添加构造函数的方法与属性（改变this指向）
+            // fun.call(obj, ...args)
+            // apply和call都是会直接执行的
+            fun.apply(obj, args)
+            // 做出返回判断
+            return fun() instanceof Object ? fun() : obj
+
+        }
+
+        var lx = mynew(fun, 'lx', 18)
+    </script>
+</body>
+</html>

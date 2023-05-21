@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/decimal.js/10.2.1/decimal.min.js"></script>
+
+    </script>
+    <script>
+        // 创建 Decimal 对象
+        var num1 = new Decimal('0.3');
+        var num2 = new Decimal('0.1');
+
+        // 进行高精度计算
+        var result = num1.minus(num2);
+
+        // 输出结果
+        console.log(result.toString()); // 0.2
+    </script>
+</body>
+</html>

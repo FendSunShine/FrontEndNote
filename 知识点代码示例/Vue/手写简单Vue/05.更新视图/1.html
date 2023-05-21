@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{str}}</h1>
+        {{str}}??
+        <button @click="tap">{{lsy}}</button>
+        {{lsy}}
+    </div>
+    <script>
+
+        new Vue({
+            el: '#app',
+            data: {
+                str: 'lxailsy',
+                lsy: '520lx'
+            },
+            // beforeCreated(){console.log('1', this.$el, this.$data)},
+            // mounted(){console.log('4', this.$el, this.$data)},
+            // beforeMount(){console.log('3', this.$el, this.$data)},
+            // created(){console.log('2', this.$el, this.$data)},
+            methods: {
+                tap(){
+                    console.log('lsyailx')
+                    console.log(this)
+                    this.str = 'lsypphaodda'
+                    this.lsy = 'ppda'
+                }
+            },
+        })
+
+
+    </script>
+</body>
+</html>

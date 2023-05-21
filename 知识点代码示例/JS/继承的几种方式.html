@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 1 class类的继承，es6
+        // class Parent{
+        //     constructor(){
+        //         this.age = 18
+        //     }
+        // }
+
+        // class Child extends Parent{
+        //     constructor(){
+        //         super()
+        //         this.name = 'lx'
+        //     }
+        // }
+
+        // console.log(new Child)
+
+        // 2 原型链继承，直接得到父辈的原型链，得到属性和方法
+        // function Parent(){
+        //     this.age = 18
+        // }
+        // function Child(){
+        //     this.name = 'lx'
+        // }
+        // console.log(Child.prototype = new Parent())
+        // console.log(new Parent())
+        // console.log(Child.prototype)
+        // console.log(new Child)
+
+        
+        // 3借用生成构造函数继承
+        function Parent(){
+            this.age = 18
+        }
+        function Child(){
+            this.name = 'lx'
+            // 添加父亲的属性与方法
+            Parent.apply(this)
+        }
+        console.log(new Child())
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 200vh;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" />
+
+    <script>
+        const inputEle = document.querySelector('input[type="text"]');
+
+        inputEle.addEventListener('input', debounce(handleInput, 500));
+        function handleInput(e) {
+            // 处理输入
+            console.log(e.data);
+        }
+
+        function debounce(fn, delay) {
+            let timer = null;
+            return function() {
+                let context = this;
+                let args = arguments;
+                clearTimeout(timer);
+                timer = setTimeout(function() {
+                                    fn.apply(context, args);
+                                    }, delay);
+            };
+    }
+
+    // --------------节流---------------
+    window.addEventListener("scroll", throttle(handleScroll, 500));
+
+    function handleScroll() {
+    // 处理滚动事件
+        console.log('滚动');
+    }
+
+    function throttle(fn, delay) {
+    let timer = null;
+    return function() {
+        let context = this;
+        let args = arguments;
+        if (!timer) {
+        timer = setTimeout(function() {
+            fn.apply(context, args);
+            timer = null;
+        }, delay);
+        }
+    };
+    }
+    </script>
+</body>
+</html>

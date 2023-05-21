@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <script>
+        function setCookie(cname,cvalue,exdays)
+        {
+            var d = new Date();
+            d.setTime(d.getTime()+(exdays*24*60*60*1000));
+            var expires = "expires="+d.toGMTString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+
+        setCookie('lx', 'cool', 1)
+        let cookieTime = new Date(2020,10,10,10,10,10).toUTCString()
+        document.cookie = 'a=b;expires='+ cookieTime + ''
+        document.cookie = 'a1=b'
+        document.cookie = 'a2=b'
+        console.log(document.cookie)
+    </script>
+</body>
+</html>

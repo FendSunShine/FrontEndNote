@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        // function fun(){
+        //     console.log( 111 )
+        //     this.name = 'lx'
+        // }
+
+        // var a = new fun()
+        // console.log(a, 'a')
+        // console.log(new fun())
+
+
+
+
+        // function Fun(){
+        //     getname = function(){console.log(222)}
+        //     return this
+        // }
+        // // console.log(Fun)
+        // Fun.aname = function(){console.log(333)}
+        // // Fun.name = 'lx'
+        // console.dir(Fun)
+        // Fun.aname()
+
+        var o = {
+            a: 10, 
+            b: {
+                a: 20,
+                fn: function(){
+                    console.log(this)
+                }
+            }
+        }
+        c = o.b.fn
+        c()
+
+    </script>
+</body>
+</html>

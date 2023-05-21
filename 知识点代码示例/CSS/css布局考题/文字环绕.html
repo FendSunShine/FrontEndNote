@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .floated {
+            float: right;
+            /* margin: 0 0 10px 10px; */
+            }
+
+        /* p {
+            clear: both;
+        } */
+        .clearFixed::after {
+            content:'';
+            display: block;
+            clear:both
+        }
+    </style>
+</head>
+<body >
+    <div class="clearFixed">
+        <img src="./1.jpg" alt="Your Image" class="floated ">
+    </div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultriciit amet, consectetur adipiscing elit. Sed ultriciit amet, consectetur adipiscing elit. Sed ultriciit amet, consectetur adipiscing elit. Sed ultriciit amet, consectetur adipiscing elit. Sed ultricies est odio, eu bibendum enim molestie vel.</p>
+</body>
+</html>

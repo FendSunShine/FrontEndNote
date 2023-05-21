@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>属性选择器示例</title>
+        <style>
+        /* 1. 匹配具有某个属性的 <a> 元素 */
+        a[title] {
+            color: red;
+        }
+
+        /* 2. 精确匹配某个属性值为 "box" 的 <div> 元素 */
+        div[data-type="box"] {
+            background-color: yellow;
+        }
+
+        /* 3. 匹配属性值中包含单词 "link" 的 <a> 元素 */
+        a[class~="link"] {
+            font-weight: bold;
+        }
+
+        /* 4. 匹配属性值以 "https://" 开头的 <a> 元素 */
+        a[href^="https://"] {
+            text-decoration: none;
+        }
+        </style>
+    </head>
+<body>
+    <div data-type="box">Attributes Selector Demo</div>
+
+    <a title="This is a tooltip.">Link with Tooltip</a>
+    <a title="Another Tooltip">Another Link</a>
+
+    <a class="nav-link">Main Navigation</a>
+    <a class="sub-link">Sub Navigation</a>
+
+    <a href="https://www.example.com">Link to Example Website</a>
+    <a href="http://www.example.com">Link to HTTP Website</a>
+</html>

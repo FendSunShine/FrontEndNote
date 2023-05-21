@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 100px;
+            height: 100px;
+            margin: 200 auto;
+        }
+    </style>
+</head>
+<body>
+    <img src="http://vue-maker.oss-cn-hangzhou.aliyuncs.com/vue-marker/5f3e41b8b7d9c60b68cdd1ef.jpg?x-oss-process=image/resize,m_pad,h_50,w_50" alt="">
+    <script>
+        const url = 'http://vue-maker.oss-cn-hangzhou.aliyuncs.com/vue-marker/5f3e41b8b7d9c60b68cdd1ef.jpg?x-oss-process=image/resize,m_pad,h_50,w_50'
+        fetch(url).then(res => {
+            console.log(res);
+        })
+    </script>
+</body>
+</html>

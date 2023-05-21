@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>File Upload Example</title>
+        <style>
+        .upload-dropzone {
+            width: 300px;
+            height: 200px;
+            margin: 20px auto;
+            border: 3px dashed #ccc;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 200px;
+        }
+
+        .upload-dropzone.drag-over {
+            border-color: #0069d9;
+            background-color: rgba(0, 105, 217, 0.1);
+        }
+
+        .upload-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        </style>
+    </head>
+    <body>
+        <img src="" alt="" style="width: 100px; margin: 50px auto; display: block;">
+        <div class="upload-dropzone">将文件拖到此处进行上传</div>
+        <input type="file" id="file-input" style="display: none">
+        <button class="upload-btn" onclick="document.getElementById('file-input').click()">选择文件</button>
+        <script>
+        var dropzone = document.querySelector(".upload-dropzone");
+        var fileInput = document.getElementById("file-input");
+        var uploadImg = document.querySelector('img')
+        // 点击上传
+        fileInput.addEventListener("change", handleFiles);
+        // 处理拖拽上传的相关事件
+        dropzone.addEventListener("dragover", handleDragOver); // 当文件拖到上传区域时触发该事件
+        dropzone.addEventListener("dragleave", handleDragLeave); // 当鼠标离开上传区域时触发该事件
+        dropzone.addEventListener("drop", handleDrop); // 当鼠标拖动文件并释放鼠标时触发该事件
+        function handleDragOver(event) {
+            event.preventDefault();
+            dropzone.classList.add("drag-over");
+        }
+
+        function handleDragLeave(event) {
+            event.preventDefault();
+            dropzone.classList.remove("drag-over");
+        }
+
+        function handleDrop(event) {
+            event.preventDefault();
+            dropzone.classList.remove("drag-over");
+            var files = event.dataTransfer.files;
+            // 在这里处理上传的文件
+            updataFile(files[0])
+        }
+
+        function handleFiles(event) {
+            var files = event.target.files;
+            // 在这里处理上传的文件
+            updataFile(files[0])
+        }
+        function updataFile(file) {
+            zipImg(file)
+            // 本地预览
+            // 1.读取文件
+            const reader = new FileReader()
+            reader.readAsDataURL(file)
+            // 2.监听是否完成
+            reader.onload = (e) => {
+                // 这个结果直接可以对img赋值
+                uploadImg.src = e.target.result
+            }
+            // 文件切片
+            file.slice(0, 100).text()
+        }
+        // 压缩文件
+        const zipImg = (file) => {
+
+            const imagePool = new ImagePool(cpus().length);
+                    }
+        </script>
+    </body>
+</html>
